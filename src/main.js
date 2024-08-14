@@ -17,15 +17,16 @@ import router from './router/router.js'
 
 // Handle the redirect before setting up the router
 router.isReady().then(() => {
-  const redirectPath = sessionStorage.getItem('redirect');
+  const redirectPath = sessionStorage.getItem('redirect')
   if (redirectPath) {
-    sessionStorage.removeItem('redirect');
-    router.push(redirectPath).catch(error => {
+    sessionStorage.removeItem('redirect')
+    router.push(redirectPath).catch((error) => {
       if (error.name !== 'NavigationDuplicated') {
-        throw error;
+        throw error
       }
-    });
+    })
   }
+})
 
 // Global components
 import AppContainer from './components/layout/container/AppContainer.vue'
