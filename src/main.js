@@ -30,9 +30,3 @@ createApp(App)
     icons: mdijs
   })
   .mount('#app')
-
-if (sessionStorage.redirect) {
-  const redirect = sessionStorage.redirect
-  delete sessionStorage.redirect
-  router.push(redirect)
-}
