@@ -7,6 +7,11 @@ const routes = [
     component: () => import('../views/HomePage.vue')
   },
   {
+    path: '/spotify',
+    meta: { title: 'Spotify' },
+    component: () => import('../views/SpotifyPage.vue')
+  },
+  {
     path: '/:pathMatch(.*)*',
     meta: { title: '404' },
     component: () => import('../views/errors/404Page.vue')

@@ -17,11 +17,13 @@ import router from './router/router.js'
 
 // Global components
 import AppContainer from './components/layout/container/AppContainer.vue'
+import AppButton from './components/layout/button/AppButton.vue'
 
 const pinia = createPinia()
 
 createApp(App)
   .component('AppContainer', AppContainer)
+  .component('AppButton', AppButton)
   .use(router)
   .use(pinia)
   .use(mdiVue, {
