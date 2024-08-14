@@ -5,7 +5,11 @@
     <AppContainer>
       <div class="text-center">
         <HomePageTitle
-          :messages="['Coming Soon...', 'Working out the kinks...', 'Building...']"
+          :messages="[
+            'Coming Soon...',
+            'Working out the kinks...',
+            'Building something exciting...'
+          ]"
           :typingSpeed="100"
           :eraseSpeed="50"
           :delayBeforeErasing="2000"
