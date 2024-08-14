@@ -16,11 +16,16 @@ import './assets/base.css'
 import router from './router/router.js'
 
 // Handle the redirect before setting up the router
-const redirectPath = sessionStorage.getItem('redirectPath')
-if (redirectPath) {
-  sessionStorage.removeItem('redirectPath')
-  router.push(redirectPath).catch(() => {})
-}
+router.isReady().then(() => {
+  const redirectPath = sessionStorage.getItem('redirect');
+  if (redirectPath) {
+    sessionStorage.removeItem('redirect');
+    router.push(redirectPath).catch(error => {
+      if (error.name !== 'NavigationDuplicated') {
+        throw error;
+      }
+    });
+  }
 
 // Global components
 import AppContainer from './components/layout/container/AppContainer.vue'

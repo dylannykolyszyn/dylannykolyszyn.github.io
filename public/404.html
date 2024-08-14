@@ -3,15 +3,14 @@
   <head>
     <title>My App</title>
     <script>
-      // Construct the redirect URL
-      const redirectURL =
-        '/' + location.pathname.split('/').slice(2).join('/') + location.search + location.hash
+      // Get the current path, excluding the base path
+      var pathSegments = location.pathname.split('/')
+      var repo = pathSegments[1]
+      var path = '/' + pathSegments.slice(2).join('/')
 
-      // Store the full path in sessionStorage
-      sessionStorage.setItem('redirectPath', redirectURL)
-
-      // Redirect to the base URL
-      window.location.href = '/'
+      // Store the path and redirect
+      sessionStorage.setItem('redirect', path)
+      location.replace(location.origin + '/' + repo)
     </script>
   </head>
 </html>
