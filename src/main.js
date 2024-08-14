@@ -15,26 +15,13 @@ import './assets/base.css'
 // Plugin files
 import router from './router/router.js'
 
-// Handle the redirect before setting up the router
-router.isReady().then(() => {
-  const redirectPath = sessionStorage.getItem('redirect')
-  if (redirectPath) {
-    sessionStorage.removeItem('redirect')
-    router.push(redirectPath).catch((error) => {
-      if (error.name !== 'NavigationDuplicated') {
-        throw error
-      }
-    })
-  }
-})
-
 // Global components
 import AppContainer from './components/layout/container/AppContainer.vue'
 import AppButton from './components/layout/button/AppButton.vue'
 
 const pinia = createPinia()
 
-createApp(App)
+let app = createApp(App)
   .component('AppContainer', AppContainer)
   .component('AppButton', AppButton)
   .use(router)
@@ -42,4 +29,17 @@ createApp(App)
   .use(mdiVue, {
     icons: mdijs
   })
-  .mount('#app')
+
+router.isReady().then(() => {
+  const redirectPath = sessionStorage.getItem('redirect')
+  if (redirectPath) {
+    sessionStorage.removeItem('redirect')
+    router.push(redirectPath).catch((error) => {
+      if (error.name !== 'NavigationDuplicated') {
+        console.error(error)
+      }
+    })
+  }
+
+  app.mount('#app')
+})

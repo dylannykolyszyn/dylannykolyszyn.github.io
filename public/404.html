@@ -3,14 +3,9 @@
   <head>
     <title>My App</title>
     <script>
-      // Get the current path, excluding the base path
-      var pathSegments = location.pathname.split('/')
-      var repo = pathSegments[1]
-      var path = '/' + pathSegments.slice(2).join('/')
-
-      // Store the path and redirect
-      sessionStorage.setItem('redirect', path)
-      location.replace(location.origin + '/' + repo)
+      // Store the full path and redirect
+      sessionStorage.setItem('redirect', location.pathname + location.search + location.hash)
+      location.replace('/')
     </script>
   </head>
 </html>
