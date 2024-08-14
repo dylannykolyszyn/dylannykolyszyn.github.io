@@ -3,10 +3,15 @@
   <head>
     <title>My App</title>
     <script>
-      const segment = 1
-      const path = '/' + location.pathname.slice(1).split('/').slice(segment).join('/')
-      sessionStorage.redirect = path
-      location.replace(location.origin + '/' + location.pathname.split('/')[1])
+      // Construct the redirect URL
+      const redirectURL =
+        '/' + location.pathname.split('/').slice(2).join('/') + location.search + location.hash
+
+      // Store the full path in sessionStorage
+      sessionStorage.setItem('redirectPath', redirectURL)
+
+      // Redirect to the base URL
+      window.location.href = '/'
     </script>
   </head>
 </html>

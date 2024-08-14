@@ -15,6 +15,13 @@ import './assets/base.css'
 // Plugin files
 import router from './router/router.js'
 
+// Handle the redirect before setting up the router
+const redirectPath = sessionStorage.getItem('redirectPath')
+if (redirectPath) {
+  sessionStorage.removeItem('redirectPath')
+  router.push(redirectPath).catch(() => {})
+}
+
 // Global components
 import AppContainer from './components/layout/container/AppContainer.vue'
 import AppButton from './components/layout/button/AppButton.vue'

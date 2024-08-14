@@ -26,6 +26,7 @@ const router = createRouter({
 // Set page title
 router.beforeEach(async (to, from, next) => {
   document.title = `${to.meta.title} | dylnyko`
+
   next()
 })
 
