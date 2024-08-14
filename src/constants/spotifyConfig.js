@@ -1,6 +1,6 @@
 export const SPOTIFY_API_CONFIG = {
   clientId: '2f65509863b147c8863a7d3e43bb2317',
-  redirectUri: `${window.location.origin}/spotify`,
+  redirectUri: `${window.location.origin}/#/spotify`,
   scopes: 'user-top-read'
 }
 
