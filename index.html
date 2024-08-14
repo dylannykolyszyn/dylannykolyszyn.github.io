@@ -52,6 +52,16 @@
     <meta name="application-name" content="dyl·nyko Portfolio" />
     <meta name="apple-mobile-web-app-title" content="dyl·nyko" />
     <meta name="format-detection" content="telephone=no" />
+
+    <script>
+      function () {
+        var redirect = sessionStorage.redirect
+        delete sessionStorage.redirect
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect)
+        }
+      }()
+    </script>
   </head>
   <body>
     <div id="app"></div>
