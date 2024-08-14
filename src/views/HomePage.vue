@@ -6,17 +6,20 @@
       <div class="text-center">
         <HomePageTitle
           :messages="[
-            'Coming Soon...',
-            'Working out the kinks...',
-            'Building something exciting...'
+            'Vue ',
+            'E-Commerce',
+            'Laravel',
+            'AWS Lambda',
+            'Shopify',
+            'React',
+            'Tailwind'
           ]"
-          :typingSpeed="100"
+          :typingSpeed="50"
           :eraseSpeed="50"
           :delayBeforeErasing="2000"
           :delayBetweenMessages="1000"
         />
-        <p class="text-xl text-white mb-8">In the meanwhile, check out my LinkedIn.</p>
-        <div class="text-white mb-8">
+        <div class="text-white mb-4">
           <div
             v-for="social in socials"
             :key="social.name"
@@ -28,14 +31,53 @@
           </div>
         </div>
 
-        <p class="text-white text-md">
-          Seasoned Full Stack Developer with a decade of coding expertise, specializing in scalable
-          web applications, CRM systems, and E-Commerce platforms. With a proven track record at The
-          Labour Party and REVIEWS.io, I've led critical projects that enhanced user engagement and
-          operational efficiency. From rebuilding CRM tools used by tens of thousands to developing
-          award-winning websites, my work has consistently delivered tangible results. Let's build
-          something extraordinary together.
+        <p class="text-white text-md mt-4">
+          Hi, I’m Dylan Nykolysyzyn, a passionate Full Stack Software Engineer with over a decade of
+          hands-on experience. I specialize in crafting scalable web applications, building robust
+          CRM systems, and developing seamless E-Commerce platforms. Whether it’s using Laravel,
+          Vue.js, AWS Lambda, or other cutting-edge technologies, I’m dedicated to delivering
+          solutions that drive performance and boost user engagement.
         </p>
+
+        <p class="text-white text-md mt-4">
+          <span class="inline-flex mr-4">
+            <mdicon name="code-tags" class="pr-1" /><strong class="pr-1"
+              >Programming Languages:</strong
+            >
+            PHP, JavaScript, SQL
+          </span>
+          <span class="inline-flex mr-4">
+            <mdicon name="laravel" class="pr-1" /><strong class="pr-1">Frameworks:</strong> Laravel,
+            Vue.js, React, Angular
+          </span>
+          <span class="inline-flex mr-4">
+            <mdicon name="tools" class="pr-1" /><strong class="pr-1">Tools:</strong> PHPUnit,
+            Sentry, DataDog, Dusk, GIT, REST APIs
+          </span>
+          <span class="inline-flex mr-4">
+            <mdicon name="cart-variant" class="pr-1" /><strong class="pr-1">E-Commerce:</strong>
+            Shopify, WooCommerce, Klaviyo
+          </span>
+          <span class="inline-flex mr-4">
+            <mdicon name="cloud-outline" class="pr-1" /><strong class="pr-1"
+              >Cloud Services:</strong
+            >
+            AWS Lambda
+          </span>
+          <span class="inline-flex mr-4">
+            <mdicon name="human-greeting" class="pr-1" /><strong class="pr-1"
+              >Interpersonal:</strong
+            >
+            Problem Solving, Collaborative Working
+          </span>
+          <span class="inline-flex mr-4">
+            <mdicon name="database-outline" class="pr-1" /><strong class="pr-1">Other:</strong> SCSS
+            & CSS3, Database Design
+          </span>
+        </p>
+
+        <h3 class="text-white mt-12 text-xl">What have I been working on?</h3>
+        <AppButton class="mt-4" to="/spotify" icon="spotify">Spotify Top Charts</AppButton>
       </div>
     </AppContainer>
   </div>
