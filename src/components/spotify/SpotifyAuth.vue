@@ -15,7 +15,7 @@ import { useSpotifyStore } from '../../stores/useSpotifyStore.js'
 const spotifyStore = useSpotifyStore()
 
 onMounted(() => {
-  const urlParams = new URLSearchParams(window?.location?.hash?.split('?')?.[1]
+  const urlParams = new URLSearchParams(window?.location?.hash?.split('?')[1]
   const code = urlParams.get('code')
 
   if (code) {
