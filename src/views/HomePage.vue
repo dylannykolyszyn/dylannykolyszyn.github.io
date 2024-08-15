@@ -5,7 +5,16 @@
     <AppContainer>
       <div class="text-center">
         <HomePageTitle
-          :messages="['Vue ', 'Spotify', 'Laravel', 'Lambda', 'Shopify', 'React', 'Tailwind']"
+          :messages="[
+            'Vue ',
+            'PHP',
+            'Shopify',
+            'Laravel',
+            'Lambda',
+            'Shopify',
+            'React',
+            'Tailwind'
+          ]"
           :typingSpeed="50"
           :eraseSpeed="50"
           :delayBeforeErasing="2000"
