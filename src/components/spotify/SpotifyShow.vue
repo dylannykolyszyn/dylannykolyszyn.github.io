@@ -35,13 +35,20 @@
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
         :class="[
           !spotifyStore.auth.isAuthenticated ? 'blur-lg' : '',
-          spotifyStore.data.loading ? 'blur-lg' : ''
+          spotifyStore.data.loading ? 'blur-lg' : '',
+          spotifyStore.data.error ? 'blur-lg' : ''
         ]"
       >
         <SpotifyCard v-for="item in spotifyStore.data.topItems" :key="item.id" :item="item" />
       </div>
-      <div class="absolute top-12 w-full content-center" v-if="!spotifyStore.auth.isAuthenticated">
+      <div
+        class="absolute top-12 w-full content-center"
+        v-if="!spotifyStore.auth.isAuthenticated && !spotifyStore.data.error"
+      >
         <SpotifyAuth />
+      </div>
+      <div class="absolute top-12 w-full content-center" v-if="spotifyStore.data.error">
+        <SpotifyError />
       </div>
     </div>
   </div>
@@ -49,8 +56,9 @@
 
 <script setup>
 import { onMounted, watch } from 'vue'
-import { useSpotifyStore } from '../../stores/useSpotifyStore.js'
+import { useSpotifyStore } from '../../stores/spotifyStore.js'
 import SpotifyAuth from './SpotifyAuth.vue'
+import SpotifyError from './SpotifyError.vue'
 import SpotifyCard from './SpotifyCard.vue'
 
 const spotifyStore = useSpotifyStore()

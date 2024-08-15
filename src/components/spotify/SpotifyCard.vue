@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { useSpotifyStore } from '../../stores/useSpotifyStore.js'
+import { useSpotifyStore } from '../../stores/spotifyStore.js'
 
 defineProps({
   item: {

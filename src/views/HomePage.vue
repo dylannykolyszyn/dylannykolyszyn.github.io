@@ -5,15 +5,7 @@
     <AppContainer>
       <div class="text-center">
         <HomePageTitle
-          :messages="[
-            'Vue ',
-            'E-Commerce',
-            'Laravel',
-            'AWS Lambda',
-            'Shopify',
-            'React',
-            'Tailwind'
-          ]"
+          :messages="['Vue ', 'Spotify', 'Laravel', 'Lambda', 'Shopify', 'React', 'Tailwind']"
           :typingSpeed="50"
           :eraseSpeed="50"
           :delayBeforeErasing="2000"
@@ -41,38 +33,29 @@
 
         <p class="text-white text-md mt-4">
           <span class="inline-flex mr-4">
-            <mdicon name="code-tags" class="pr-1" /><strong class="pr-1"
-              >Programming Languages:</strong
-            >
+            <mdicon name="code-tags" class="pr-1" />
             PHP, JavaScript, SQL
           </span>
           <span class="inline-flex mr-4">
-            <mdicon name="laravel" class="pr-1" /><strong class="pr-1">Frameworks:</strong> Laravel,
-            Vue.js, React, Angular
+            <mdicon name="laravel" class="pr-1" />Laravel, Vue.js, React, Angular
           </span>
           <span class="inline-flex mr-4">
-            <mdicon name="tools" class="pr-1" /><strong class="pr-1">Tools:</strong> PHPUnit,
-            Sentry, DataDog, Dusk, GIT, REST APIs
+            <mdicon name="tools" class="pr-1" />PHPUnit, Sentry, DataDog, Dusk, GIT, REST APIs
           </span>
           <span class="inline-flex mr-4">
-            <mdicon name="cart-variant" class="pr-1" /><strong class="pr-1">E-Commerce:</strong>
+            <mdicon name="cart-variant" class="pr-1" />
             Shopify, WooCommerce, Klaviyo
           </span>
           <span class="inline-flex mr-4">
-            <mdicon name="cloud-outline" class="pr-1" /><strong class="pr-1"
-              >Cloud Services:</strong
-            >
+            <mdicon name="cloud-outline" class="pr-1" />
             AWS Lambda
           </span>
           <span class="inline-flex mr-4">
-            <mdicon name="human-greeting" class="pr-1" /><strong class="pr-1"
-              >Interpersonal:</strong
-            >
+            <mdicon name="human-greeting" class="pr-1" />
             Problem Solving, Collaborative Working
           </span>
           <span class="inline-flex mr-4">
-            <mdicon name="database-outline" class="pr-1" /><strong class="pr-1">Other:</strong> SCSS
-            & CSS3, Database Design
+            <mdicon name="database-outline" class="pr-1" /> SCSS & CSS3, Database Design
           </span>
         </p>
 
@@ -84,7 +67,7 @@
 </template>
 
 <script setup>
-import { useSocialStore } from '../stores/useSocialStore.js'
+import { useSocialStore } from '../stores/socialStore.js'
 import HomePageTitle from '../components/homepage/HomePageTitle.vue'
 
 const socialsStore = useSocialStore()

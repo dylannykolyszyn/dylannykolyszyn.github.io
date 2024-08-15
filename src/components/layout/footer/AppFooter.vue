@@ -28,7 +28,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useSocialStore } from '../../../stores/useSocialStore.js'
+import { useSocialStore } from '../../../stores/socialStore.js'
 
 const socialsStore = useSocialStore()
 

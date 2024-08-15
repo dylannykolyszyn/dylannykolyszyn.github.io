@@ -1,10 +1,8 @@
 <template>
   <div class="bg-white w-fit p-6 rounded-lg mx-auto text-center shadow-md">
     <h1 class="text-3xl font-bold mb-6">Your Spotify Charts</h1>
-    <p class="mb-6">Connect your Spotify account to view your top artists and tracks.</p>
-    <AppButton @click="spotifyStore.initiateAuth" theme="primary" icon="spotify">
-      Connect to Spotify
-    </AppButton>
+    <p class="mb-6">{{ spotifyStore.data.error }}.</p>
+    <AppButton @click="spotifyStore.initiateAuth" theme="primary" icon="spotify"> Retry </AppButton>
   </div>
 </template>
 
