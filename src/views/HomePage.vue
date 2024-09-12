@@ -65,12 +65,7 @@
 
         <div class="mt-16 text-center">
           <h3 class="text-3xl font-bold mb-6">Latest Projects</h3>
-          <AppButton
-            icon="spotify"
-            icon-position="start"
-            to="/spotify"
-            class="text-xl font-bold py-3 px-6 bg-white text-purple-600 rounded-full hover:bg-purple-100 transition-colors"
-          >
+          <AppButton icon="spotify" icon-position="start" to="/spotify" expanded theme="primary">
             Spotify Charts
           </AppButton>
         </div>
