@@ -1,13 +1,12 @@
 <template>
-  <div class="inline-block text-center">
-    <h1 class="text-3xl font-bold text-white mb-2 content-bottom">dyl·nyko</h1>
-    <h2 class="text-6xl font-bold text-white mb-4 content-bottom">
+  <div>
+    <h1 class="text-6xl font-extrabold mb-8 animate-pulse">
       {{ displayText }}
       <span
         class="inline-block w-0.5 h-12 bg-white ml-1"
         :class="{ 'opacity-0': !showCursor }"
       ></span>
-    </h2>
+    </h1>
   </div>
 </template>
 

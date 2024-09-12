@@ -1,85 +1,103 @@
 <template>
-  <div
-    class="min-h-screen flex items-center bg-gradient-to-br from-purple-600 via-teal-500 to-red-500"
-  >
+  <div class="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 text-white font-sans">
     <AppContainer>
-      <div class="text-center">
+      <div class="max-w-5xl mx-auto py-16">
         <HomePageTitle
-          :messages="[
-            'Vue ',
-            'PHP',
-            'Shopify',
-            'Laravel',
-            'Lambda',
-            'Shopify',
-            'React',
-            'Tailwind'
-          ]"
+          :messages="['Vue 3', 'PHP', 'Shopify', 'Laravel', 'Lambda', 'React', 'Tailwind']"
           :typingSpeed="50"
           :eraseSpeed="50"
           :delayBeforeErasing="2000"
           :delayBetweenMessages="1000"
         />
-        <div class="text-white mb-4">
+
+        <h2 class="text-4xl mb-8 font-light">
+          Crafting Digital Experiences in Nottingham & Beyond
+        </h2>
+        <p class="text-2xl mb-12 hover:scale-105 transition-transform cursor-pointer">
+          Let's create something amazing:
+          <a href="mailto:mail@dylnyko.uk" class="font-bold underline">mail@dylnyko.uk</a>
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12">
           <div
-            v-for="social in socials"
-            :key="social.name"
-            class="inline-block h-6 w-6 [&:not(:last-child)]:mr-8"
+            class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow"
           >
-            <a :aria-label="social.name" :href="social.url" target="_blank">
-              <mdicon :alt="social.name" :name="social.icon" />
-            </a>
+            <h3 class="text-3xl font-bold mb-6">Skills</h3>
+            <ul class="space-y-2">
+              <li class="flex items-center">
+                <mdicon name="language-php" class="mr-2" /> PHP, JavaScript, SQL
+              </li>
+              <li class="flex items-center">
+                <mdicon name="vuejs" class="mr-2" /> Laravel, Vue.js, React, Angular
+              </li>
+              <li class="flex items-center">
+                <mdicon name="test-tube" class="mr-2" /> PHPUnit, Sentry, DataDog, Dusk
+              </li>
+              <li class="flex items-center">
+                <mdicon name="shopping" class="mr-2" /> Shopify, WooCommerce, Klaviyo
+              </li>
+              <li class="flex items-center"><mdicon name="aws" class="mr-2" /> AWS Lambda</li>
+              <li class="flex items-center">
+                <mdicon name="brain" class="mr-2" /> Problem Solving, Collaboration
+              </li>
+              <li class="flex items-center">
+                <mdicon name="palette" class="mr-2" /> SCSS & CSS3, Database Design
+              </li>
+            </ul>
+          </div>
+          <div
+            class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow"
+          >
+            <h3 class="text-3xl font-bold mb-6">About</h3>
+            <p class="text-base leading-relaxed">
+              Hey there! I'm Dylan Nykolysyzyn, a Full Stack Developer who's been knee-deep in code
+              for over a decade. I love tackling tricky problems and turning them into slick,
+              scalable solutions. From building CRM systems that actually work to creating
+              e-commerce setups & integrations that don't make you want to pull your hair out, I've
+              done it all. I'm all about using the latest tech to build stuff that's fast,
+              user-friendly, and actually helps businesses grow.
+              <strong>
+                Got a wild idea you want to turn into reality? Let's chat and make it happen!
+              </strong>
+            </p>
           </div>
         </div>
 
-        <p class="text-white text-md mt-4">
-          Hi, I’m Dylan Nykolysyzyn, a passionate Full Stack Software Engineer with over a decade of
-          hands-on experience. I specialize in crafting scalable web applications, building robust
-          CRM systems, and developing seamless E-Commerce platforms. Whether it’s using Laravel,
-          Vue.js, AWS Lambda, or other cutting-edge technologies, I’m dedicated to delivering
-          solutions that drive performance and boost user engagement.
-        </p>
+        <div class="mt-16 text-center">
+          <h3 class="text-3xl font-bold mb-6">Latest Projects</h3>
+          <AppButton
+            icon="spotify"
+            icon-position="start"
+            to="/spotify"
+            class="text-xl font-bold py-3 px-6 bg-white text-purple-600 rounded-full hover:bg-purple-100 transition-colors"
+          >
+            Spotify Charts
+          </AppButton>
+        </div>
 
-        <p class="text-white text-md mt-4">
-          <span class="inline-flex mr-4">
-            <mdicon name="code-tags" class="pr-1" />
-            PHP, JavaScript, SQL
-          </span>
-          <span class="inline-flex mr-4">
-            <mdicon name="laravel" class="pr-1" />Laravel, Vue.js, React, Angular
-          </span>
-          <span class="inline-flex mr-4">
-            <mdicon name="tools" class="pr-1" />PHPUnit, Sentry, DataDog, Dusk, GIT, REST APIs
-          </span>
-          <span class="inline-flex mr-4">
-            <mdicon name="cart-variant" class="pr-1" />
-            Shopify, WooCommerce, Klaviyo
-          </span>
-          <span class="inline-flex mr-4">
-            <mdicon name="cloud-outline" class="pr-1" />
-            AWS Lambda
-          </span>
-          <span class="inline-flex mr-4">
-            <mdicon name="human-greeting" class="pr-1" />
-            Problem Solving, Collaborative Working
-          </span>
-          <span class="inline-flex mr-4">
-            <mdicon name="database-outline" class="pr-1" /> SCSS & CSS3, Database Design
-          </span>
-        </p>
-
-        <h3 class="text-white mt-12 text-xl">What have I been working on?</h3>
-        <AppButton class="mt-4" to="/spotify" icon="spotify">Spotify Top Charts</AppButton>
+        <div class="mt-16 text-center">
+          <h3 class="text-3xl font-bold mb-6">Join My Network</h3>
+          <div class="flex justify-center space-x-6">
+            <a
+              v-for="social in socials"
+              :key="social.name"
+              :href="social.url"
+              target="_blank"
+              class="text-white hover:text-purple-200 transform hover:scale-110 transition-all"
+            >
+              <mdicon :name="social.icon" size="32" />
+            </a>
+          </div>
+        </div>
       </div>
     </AppContainer>
   </div>
 </template>
 
 <script setup>
+import HomePageTitle from '@/components/homepage/HomePageTitle.vue'
 import { useSocialStore } from '../stores/socialStore.js'
-import HomePageTitle from '../components/homepage/HomePageTitle.vue'
 
 const socialsStore = useSocialStore()
-
 const socials = socialsStore.getSocialLinks
 </script>
